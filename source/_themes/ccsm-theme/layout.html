@@ -1,0 +1,61 @@
+{%- extends "basic/layout.html" %}
+
+{%- block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  {% if theme_touch_icon %}
+    <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+{% endblock %}
+
+{%- block relbar1 %}{% endblock %}
+{%- block relbar2 %}{% endblock %}
+
+{%- block document %}
+<div class="header">
+  <a href="{{ pathto( master_doc )|e }}"><i class="fa fa-align-left fa-flip-vertical"></i> {{ project }}</a>
+</div>
+
+{% if prev %}
+<a class="nav-button nav-button-prev-page" href="{{ prev.link|e }}"><i class="fa fa-angle-double-left fa-2x"></i></a>
+{% endif %}
+
+{% if next %}
+<a class="nav-button nav-button-next-page" href="{{ next.link|e }}"><i class="fa fa-angle-double-right fa-2x"></i></a>
+{% endif %}
+
+{{ super() }}
+
+<table class="nav-footer">
+  <tr>
+    <td class="nav-footer-prev" >
+    {% if prev %}
+      <a class="nav-footer-button" href="{{ prev.link|e }}"><i class="fa fa-chevron-left fa-2x"></i></a>
+    {% endif %}
+    </td>
+    <td class="nav-footer-next">
+    {% if next %}
+      <a class="nav-footer-button" href="{{ next.link|e }}"><i class="fa fa-chevron-right fa-2x"></i></a>
+    {% endif %}
+    </td>
+  </tr>
+</table>
+
+{% endblock %}
+
+{%- block footer %}
+    <div class="footer">
+      &copy;{{ copyright }}.
+      {% if theme_show_powered_by|lower == 'true' %}
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>,
+      Modified from <a href="https://github.com/bitprophet/alabaster">Alabaster</a>
+      {% endif %}
+      {%- if show_source and has_source and sourcename %}
+      |
+      <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+          rel="nofollow">{{ _('Page source') }}</a></li>
+      {%- endif %}
+    </div>
+{%- endblock %}
