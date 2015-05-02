@@ -34,7 +34,7 @@ for its amplitude, frequency, and phase:
 
    t = np.arange(0.0, 4.0, 0.02)
    plt.plot(t, np.sin(2*np.pi*t), '-', lw=3, color='#355C7D')
-   plt.title('Simple Wave Equation: sin(2π(t))')
+   plt.title('Simple Wave Equation: sin(2pi(t))')
    plt.ylim(-1.5,1.5)
    plt.show()
 
