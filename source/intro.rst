@@ -1,7 +1,8 @@
 .. _index: Introduction to the Book
 
+########################
 Introduction to the Book
-========================
+########################
 
 Queen are often misrepresented by hardcore fans as stalwart defenders of rock
 and roll, as up until 1980 all of their albums had written into the liner notes
@@ -39,14 +40,14 @@ a better job covering that material. [2]_ The goal is to give the reader a
 practical understanding of the science of music.
 
 What is Creative Coding?
-------------------------
+========================
 
-.. todo::
-
-   Fill in this section.
+.. todo:: Fill in this section with discussion of Creative Coding principles.
 
 Structure of the Book
----------------------
+=====================
+
+.. todo:: Re-write this section to reflect the new book structure.
 
 This book covers three general knowledge areas: physics, music theory, and signal
 processing. Some of these may sound intimidating depending on your current field
@@ -62,11 +63,9 @@ the meat of the chapters. Once a cursory knowledge is obtained, it will be
 folded into other topics for some interesting overlaps.
 
 Software Used in the Book
--------------------------
+=========================
 
-.. todo:: 
-
-   Fill in this section once the course software has been decided.
+.. todo:: Fill in this section once the course software has been decided.
 
 .. rubric:: Footnotes
 

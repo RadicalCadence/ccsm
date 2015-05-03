@@ -1,5 +1,6 @@
+###############
 About this Book
-===============
+###############
 
 .. _Griffin Moe: http://griffinmoe.com/
 .. _GitHub repository:
@@ -13,18 +14,17 @@ requests and comments on the `GitHub repository`_. Remaining content and
 tasks can be found on :ref:`todo`.
 
 Table of Contents
-=================
+*****************
 
 .. toctree::
    :maxdepth: 2
 
    intro
-   principles-of-waves
-   sound-perception
+   book1_theory/index
    todo
 
 Indices and tables
-==================
+******************
 
 * :ref:`genindex`
 * :ref:`modindex`

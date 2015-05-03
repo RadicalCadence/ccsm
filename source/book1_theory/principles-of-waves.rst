@@ -1,5 +1,6 @@
+*******************
 Principles of Waves
-===================
+*******************
 
 Sound is the reception of air pressure variations as electro-chemical impulses
 that your brain perceives as sound. The first part of this definition is what
@@ -8,7 +9,7 @@ Music and human speech are both adapted to how the brain processes sound, so it
 is important to understand how the process works.
 
 The Wave Equation
------------------
+=================
 
 It will be helpful to cover some essential wave theory before covering the
 neurophysiology of sound.
@@ -39,7 +40,7 @@ for its amplitude, frequency, and phase:
    plt.show()
 
 Amplitude
----------
+=========
 
 The amplitude of a wave is the distance it travels from its peak height to the
 point of equilibrium, which is zero in this plot. An increase in amplitude is
@@ -48,7 +49,7 @@ amplitude is perceived as an decrease in volume. Amplitude is often measured in
 the logarithmic unit of *decibels* (dB).
 
 Frequency
----------
+=========
 
 The frequency of a wave is its rate of change, which can be measured as the
 distance between *peaks*, *troughs*, or other recognizable repetitions. This
@@ -117,7 +118,7 @@ repetitions per second. For example, a 440Hz sound wave will repeat 440 times
 every second.
 
 Phase
------
+=====
 
 The phase of a wave is the initial horizontal offset for the waveform. For
 example, a sine wave and a cosine wave both have the same waveform, but a sine
@@ -125,7 +126,49 @@ wave starts from zero and a cosine wave starts at one. In this example, a
 cosine wave has a phase difference of :math:`\frac{\pi}{2}`
 (:math:`90^{\circ}`) from a sine wave.
 
-Phase itself does not affect the perception of a sound wave; only when the
-phase of a waveform is changed or when two out-of-phase waves are played
-together do we perceive phase.
+Phase itself does not affect the perception of a sound wave. One instance of
+phase affecting perception is when two out-of-phase waves are played together
+and can reinforce peaks and troughs or cancel each other out, as seen below:
 
+.. plot::
+
+   import matplotlib.pyplot as plt
+   from numpy import pi
+   from numpy import sin
+   import numpy as np
+
+   t = np.arange(0.0, 4.0, 0.02)
+   phi = 2*pi
+
+   plt.plot(t, sin(2*pi*t), color='#C06C84')
+   plt.plot(t, 0.5*sin(2*pi*t+phi), color='#355C7D')
+   plt.plot(t, sin(2*pi*t) + 0.5*sin(2*pi*t+phi), color='#F8B195', lw=3)
+   plt.title('Constructive Interference')
+   plt.ylim(-2,2)
+   plt.show()
+
+The bold outside line is the summation of the red and blue sine waves, which
+are out of phase from each other by :math:`2\pi` causing the overall wave to
+increase in amplitude. This behavior is also commonly called *interference*, in
+particular this is *constructive interference*.
+
+Waves that have a phase offset that is close to an odd multiple of :math:`2\pi`
+will have *destructive interference*, where the peaks and the troughs are
+diminished, decreasing the overall amplitude. :math:`\frac{23\pi}{24}`
+
+.. plot::
+
+   import matplotlib.pyplot as plt
+   from numpy import pi
+   from numpy import sin
+   import numpy as np
+
+   t = np.arange(0.0, 4.0, 0.02)
+   phi = 23*pi/24
+
+   plt.plot(t, sin(2*pi*t), color='#C06C84')
+   plt.plot(t, sin(2*pi*t+phi), color='#355C7D')
+   plt.plot(t, sin(2*pi*t)+sin(2*pi*t+phi), color='#F8B195', lw=3)
+   plt.title('Destructive Interference')
+   plt.ylim(-1.5,1.5)
+   plt.show()
