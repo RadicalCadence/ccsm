@@ -65,12 +65,12 @@ adding figures/plots or changing the theme:
       <td style="border: 1px solid #3E4349; padding: 24px; 
         background-color: #FFFFFF">#FFFFFF</td>
       <td style="padding: 24px; background-color: #F8B195">#F8B195</td>
-      <td style="padding: 24px; background-color: #F07280">#F67280</td>
+      <td style="padding: 24px; background-color: #F07280">#F07280</td>
       <td style="padding: 24px; background-color: #C06C84">#C06C84</td>
       <td style="padding: 24px; background-color: #6C5B7B; 
         color: #ffffff">#6C5B7B</td>
       <td style="padding: 24px; background-color: #39627d; 
-        color: #ffffff">#355C7D</td>
+        color: #ffffff">#39627D</td>
       <td style="padding: 24px; background-color: #3E4349;
         color: #ffffff">#3E4349</td>
    </tr></table>

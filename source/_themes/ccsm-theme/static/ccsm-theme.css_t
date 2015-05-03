@@ -350,7 +350,7 @@ pre, tt, code, cite {
 
 
 cite {
-  background-color: #6C5B7B;
+  background-color: #6c5b7b;
   color: #ffffff;
   padding: 3px;
   border-radius: 3px;
