@@ -17,4 +17,6 @@ back here later.
 
    principles-of-waves
    sound-perception
+   sampling-theorem
    music-theory
+   midi

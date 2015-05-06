@@ -29,4 +29,9 @@ These packages can easily be installed using [PIP][].
 Contributing to the Book
 ------------------------
 
-TODO
+[Contribution]: http://ccsm.radicalcadence.com/html/todo.html
+[Gitter]: https://gitter.im/RadicalCadence/ccsm
+
+Check out the [Contribution][] section in the book for guidelines on what,
+where, and how to contribute. Also join us on [Gitter][] if you have any
+questions, comments, or just want to talk about music!

@@ -2,4 +2,4 @@
 Sound Perception
 ****************
 
-Filler content, woohoo!
+.. todo:: Complete the 'Sound Perception' chapter.

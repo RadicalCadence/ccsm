@@ -154,7 +154,8 @@ particular this is *constructive interference*.
 
 Waves that have a phase offset that is close to an odd multiple of :math:`2\pi`
 will have *destructive interference*, where the peaks and the troughs are
-diminished, decreasing the overall amplitude. :math:`\frac{23\pi}{24}`
+diminished, decreasing the overall amplitude. At an offset of :math:`\pi`
+the sine waves will completely cancel out, resulting in silence.
 
 .. plot::
 

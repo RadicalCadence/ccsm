@@ -3,7 +3,7 @@ About this Book
 ###############
 
 .. _Griffin Moe: http://griffinmoe.com/
-.. _GitHub repository:
+.. _GitHub repository: https://github.com/RadicalCadence/ccsm
 
 This is an introductory book of useful tips and strategies for developing
 computer musicianship. It is written and maintained by `Griffin Moe`_ as well
@@ -21,6 +21,8 @@ Table of Contents
 
    intro
    book1_theory/index
+   book2_practice/index
+   book3_exploration/index
    todo
 
 Indices and tables
