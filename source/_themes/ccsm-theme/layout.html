@@ -18,11 +18,15 @@
 </div>
 
 {% if prev %}
-<a class="nav-button nav-button-prev-page" href="{{ prev.link|e }}"><i class="fa fa-angle-double-left fa-3x"></i></a>
+<div class="nav-sidebutton nav-sidebutton-prev">
+  <a class="nav-sidebutton-icon" href="{{ prev.link|e }}"><i class="fa fa-angle-double-left fa-3x"></i></a>
+</div>
 {% endif %}
 
 {% if next %}
-<a class="nav-button nav-button-next-page" href="{{ next.link|e }}"><i class="fa fa-angle-double-right fa-3x"></i></a>
+<div class="nav-sidebutton nav-sidebutton-next">
+  <a class="nav-sidebutton-icon" href="{{ next.link|e }}"><i class="fa fa-angle-double-right fa-3x"></i></a>
+</div>
 {% endif %}
 
 {{ super() }}
