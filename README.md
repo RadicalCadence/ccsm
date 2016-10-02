@@ -23,6 +23,7 @@ In order to build this Sphinx book, you will need the following packages:
 * [Sphinx](http://sphinx-doc.org/)
 * [Matplotlib](http://matplotlib.org/)
 * [IPython](http://ipython.org/)
+* [sphinx-autobuild](https://pypi.python.org/pypi/sphinx-autobuild)
 
 These packages can easily be installed using [PIP][].
 

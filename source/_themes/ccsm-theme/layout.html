@@ -1,65 +1,73 @@
-{%- extends "basic/layout.html" %}
+{%- extends "!basic.html" %}
+
+{% set css_files = css_files + ["_static/font-awesome.min.css"] %}
 
 {%- block extrahead %}
   {{ super() }}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   {% if theme_touch_icon %}
     <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
   {% endif %}
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 {% endblock %}
 
 {%- block relbar1 %}{% endblock %}
 {%- block relbar2 %}{% endblock %}
 
 {%- block document %}
-<div class="header">
-  <a href="{{ pathto( master_doc )|e }}"><i class="fa fa-align-left fa-flip-vertical"></i> {{ project }}</a>
-</div>
+  <header>
+    <a href="{{ pathto( master_doc )|e }}">
+      <i class="fa fa-align-left fa-flip-vertical"></i> {{ project }}
+    </a>
+  </header>
 
-{% if prev %}
-<div class="nav-sidebutton nav-sidebutton-prev">
-  <a class="nav-sidebutton-icon" href="{{ prev.link|e }}"><i class="fa fa-angle-double-left fa-3x"></i></a>
-</div>
-{% endif %}
+  {% if prev %}
+  <div class="nav-sidebutton nav-sidebutton-prev">
+    <a class="nav-sidebutton-icon" href="{{ prev.link|e }}">
+      <i class="fa fa-angle-double-left fa-3x"></i>
+    </a>
+  </div>
+  {% endif %}
 
-{% if next %}
-<div class="nav-sidebutton nav-sidebutton-next">
-  <a class="nav-sidebutton-icon" href="{{ next.link|e }}"><i class="fa fa-angle-double-right fa-3x"></i></a>
-</div>
-{% endif %}
+  {% if next %}
+  <div class="nav-sidebutton nav-sidebutton-next">
+    <a class="nav-sidebutton-icon" href="{{ next.link|e }}">
+      <i class="fa fa-angle-double-right fa-3x"></i>
+    </a>
+  </div>
+  {% endif %}
 
-{{ super() }}
+  {{ super() }}
 
-<table class="nav-footer">
-  <tr>
-    <td class="nav-footer-prev" >
-    {% if prev %}
-      <a class="nav-footer-button" href="{{ prev.link|e }}"><i class="fa fa-chevron-left fa-2x"></i></a>
-    {% endif %}
-    </td>
-    <td class="nav-footer-next">
-    {% if next %}
-      <a class="nav-footer-button" href="{{ next.link|e }}"><i class="fa fa-chevron-right fa-2x"></i></a>
-    {% endif %}
-    </td>
-  </tr>
-</table>
+  <nav class="nav-footer">
+      {% if prev %}
+      <div class="nav-footer-prev">
+        <a class="nav-footer-button" href="{{ prev.link|e }}">
+          <i class="fa fa-chevron-left fa-2x"></i>
+        </a>
+      </div>
+      {% endif %}
+      {% if next %}
+      <div class="nav-footer-next">
+        <a class="nav-footer-button" href="{{ next.link|e }}">
+          <i class="fa fa-chevron-right fa-2x"></i>
+        </a>
+      </div>
+      {% endif %}
+  </nav>
 
 {% endblock %}
 
 {%- block footer %}
-    <div class="footer">
-      &copy;{{ copyright }}.
-      {% if theme_show_powered_by|lower == 'true' %}
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>,
-      Modified from <a href="https://github.com/bitprophet/alabaster">Alabaster</a>
-      {% endif %}
-      {%- if show_source and has_source and sourcename %}
-      |
-      <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-          rel="nofollow">{{ _('Page source') }}</a></li>
-      {%- endif %}
-    </div>
+  <footer>
+    &copy;{{ copyright }}.
+    {% if theme_show_powered_by|lower == 'true' %}
+    |
+    Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>
+    {% endif %}
+    {%- if show_source and has_source and sourcename %}
+    |
+    <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+        rel="nofollow">{{ _('Page source') }}</a></li>
+    {%- endif %}
+  </footer>
 {%- endblock %}

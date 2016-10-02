@@ -1,8 +1,5 @@
-{% set page_width = '940px' %}
-{% set sidebar_width = '220px' %}
+{% set page_width = '55%' %}
 
-{% set theme_sidebar_header = theme_sidebar_header or theme_gray_1 %}
-{% set theme_sidebar_link = theme_sidebar_link or theme_gray_1 %}
 {% set theme_anchor_hover_fg = theme_anchor_hover_fg or theme_gray_1 %}
 
 {% set theme_note_bg = theme_note_bg or theme_gray_2 %}
@@ -14,21 +11,15 @@
 
 {% set theme_seealso_bg = theme_seealso_bg or theme_gray_2 %}
 
-{% set theme_narrow_sidebar_link = theme_narrow_sidebar_link or theme_gray_3 %}
-{% set theme_sidebar_hr = theme_sidebar_hr or theme_gray_3 %}
-
-
 @import url("basic.css");
 
 /* -- page layout ----------------------------------------------------------- */
 
 body {
-    font-family: {{ theme_font_family }};
-    font-size: 17px;
     background-color: white;
-    color: #000;
-    margin: 0;
-    padding: 0;
+    color: #6C5B7B;
+    font-size: 18px;
+    font-family: {{ theme_font_family }};
 }
 
 div.document {
@@ -37,24 +28,20 @@ div.document {
     /*border: 1px solid #B1B4B6; */
 }
 
-div.documentwrapper {
+main {
     float: left;
     width: 100%;
 }
 
 div.bodywrapper {
-    margin: 0 0 0 {{ sidebar_width }};
-}
-
-div.sphinxsidebar {
-    width: {{ sidebar_width }};
+    margin: 0;
 }
 
 hr {
     border: 1px solid #B1B4B6;
 }
 
-div.header {
+header {
     background-color: #f8b195;
     padding: 10px;
     margin-bottom: 20px;
@@ -63,7 +50,7 @@ div.header {
     box-shadow: 0 6px 8px -8px black;
 }
 
-div.header a {
+header a, header a:hover {
     color: {{ theme_body_text }};
     text-decoration: none;
     font-weight: 400;
@@ -75,7 +62,7 @@ div.nav-sidebutton {
   position: fixed;
   top: 0px;
   height: 100%;
-  width: 10%;
+  width: 15%;
 }
 
 div.nav-sidebutton:hover {
@@ -109,12 +96,11 @@ a.nav-sidebutton-icon i {
 }
 
 div.body {
-  background-color: #ffffff;
-  color: {{ theme_body_text }};
   padding: 0 30px 0 30px;
+  color: {{ theme_body_text }};
 }
 
-table.nav-footer {
+.nav-footer {
   padding-top: 20px;
   width: 100%;
   display: none;
@@ -130,12 +116,17 @@ a.nav-footer-button:hover {
   color: #C06C84;
 }
 
-td.nav-footer-next {
-  text-align: right; 
-  white-space:nowrap;
+.nav-footer-prev {
+  float: left;
+  clear: left;
 }
 
-div.footer {
+.nav-footer-next {
+  float: right;
+  clear: right;
+}
+
+footer {
     width: {{ page_width }};
     margin: 20px auto 30px auto;
     font-size: 14px;
@@ -143,114 +134,12 @@ div.footer {
     text-align: right;
 }
 
-div.footer a {
+footer a {
     color: {{ theme_footer_text }};
 }
 
 div.related {
     display: none;
-}
-
-div.sphinxsidebar a {
-    color: {{ theme_sidebar_link }};
-    text-decoration: none;
-    border-bottom: 1px dotted {{ theme_sidebar_link_underscore }};
-}
-
-div.sphinxsidebar a:hover {
-    border-bottom: 1px solid {{ theme_sidebar_link_underscore }};
-}
-
-div.sphinxsidebar {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-div.sphinxsidebarwrapper {
-    padding: 18px 10px;
-}
-
-div.sphinxsidebarwrapper p.logo {
-    padding: 0;
-    margin: -10px 0 0 0px;
-    text-align: center;
-}
-
-div.sphinxsidebarwrapper h1.logo {
-    margin-top: -10px;
-    text-align: center;
-    margin-bottom: 5px;
-    text-align: {{ theme_logo_text_align }};
-}
-
-div.sphinxsidebarwrapper h1.logo-name {
-    margin-top: 0px;
-}
-
-div.sphinxsidebarwrapper p.blurb {
-    margin-top: 0;
-    font-style: {{ theme_description_font_style }};
-}
-
-div.sphinxsidebar h3,
-div.sphinxsidebar h4 {
-    font-family: {{ theme_head_font_family }};
-    color: {{ theme_sidebar_header }};
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 5px 0;
-    padding: 0;
-}
-
-div.sphinxsidebar h4 {
-    font-size: 20px;
-}
-
-div.sphinxsidebar h3 a {
-    color: {{ theme_sidebar_link }};
-}
-
-div.sphinxsidebar p.logo a,
-div.sphinxsidebar h3 a,
-div.sphinxsidebar p.logo a:hover,
-div.sphinxsidebar h3 a:hover {
-    border: none;
-}
-
-div.sphinxsidebar p {
-    color: {{ theme_sidebar_text }};
-    margin: 10px 0;
-}
-
-div.sphinxsidebar ul {
-    margin: 10px 0;
-    padding: 0;
-    color: {{ theme_sidebar_list }};
-}
-
-div.sphinxsidebar ul li.toctree-l1 > a {
-    font-size: 120%;
-}
-
-div.sphinxsidebar ul li.toctree-l2 > a {
-    font-size: 110%;
-}
-
-div.sphinxsidebar input {
-    border: 1px solid {{ theme_sidebar_search_button }};
-    font-family: {{ theme_font_family }};
-    font-size: 1em;
-}
-
-div.sphinxsidebar hr {
-    border: none;
-    height: 1px;
-    color: {{ theme_sidebar_link_underscore }};
-    background: {{ theme_sidebar_link_underscore }};
-
-    text-align: left;
-    margin-left: 0;
-    width: 50%;
 }
 
 /* -- body styles ----------------------------------------------------------- */
@@ -296,7 +185,7 @@ a.headerlink:hover {
 }
 
 div.body p, div.body dd, div.body li {
-    line-height: 1.4em;
+    line-height: 1.6em;
 }
 
 div.admonition {
@@ -525,23 +414,19 @@ a:hover tt, a:hover code {
       display: none;
     }
 
-    table.nav-footer {
-      display: table;
+    .nav-footer {
+      display: block;
     }
 
 }
 
 @media screen and (max-width: 870px) {
 
-    div.sphinxsidebar {
-      display: none;
-    }
-
     div.document {
        width: 100%;
     }
 
-    div.documentwrapper {
+    main {
       margin-left: 0;
       margin-top: 0;
       margin-right: 0;
@@ -559,15 +444,11 @@ a:hover tt, a:hover code {
       width: auto;
     }
 
-    .footer {
-      width: auto;
-    }
-
     .bodywrapper {
       margin: 0;
     }
 
-    .footer {
+    footer {
       width: auto;
     }
 
@@ -584,32 +465,9 @@ a:hover tt, a:hover code {
         padding: 20px 30px;
     }
 
-    div.documentwrapper {
+    main {
         float: none;
         background: white;
-    }
-
-    div.sphinxsidebar {
-        display: block;
-        float: none;
-        width: 102.5%;
-        margin: 50px -30px -20px -30px;
-        padding: 10px 20px;
-        background: {{ theme_narrow_sidebar_bg }};
-        color: {{ theme_narrow_sidebar_fg }};
-    }
-
-    div.sphinxsidebar h3, div.sphinxsidebar h4, div.sphinxsidebar p,
-    div.sphinxsidebar h3 a {
-        color: white;
-    }
-
-    div.sphinxsidebar a {
-        color: {{ theme_narrow_sidebar_link }};
-    }
-
-    div.sphinxsidebar p.logo {
-        display: none;
     }
 
     div.document {
@@ -629,7 +487,7 @@ a:hover tt, a:hover code {
         padding: 0;
     }
 
-    div.footer {
+    footer {
         display: none;
     }
 
@@ -650,11 +508,11 @@ a:hover tt, a:hover code {
         width: auto;
     }
 
-    .footer {
+    footer {
         width: auto;
     }
 
-    .footer {
+    footer {
         width: auto;
     }
 

@@ -1,3 +1,5 @@
 .ropeproject/
 build/
 *.swp
+*.swo
+*.bak
