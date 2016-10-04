@@ -173,3 +173,7 @@ the sine waves will completely cancel out, resulting in silence.
    plt.title('Destructive Interference')
    plt.ylim(-1.5,1.5)
    plt.show()
+
+This might make more sense if you try playing with this concept, using the demo below:
+
+.. conceptdemo:: ../_static/demos/phasing.js

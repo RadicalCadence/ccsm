@@ -217,7 +217,7 @@ div.admonition p.last {
     margin-bottom: 0;
 }
 
-div.figure {
+div.figure, div.concept-demo {
     text-align: center;
     width: 60%;
     margin-left: auto;
